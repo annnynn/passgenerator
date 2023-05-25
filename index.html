@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Password Generator</title>
+</head>
+
+<body>
+    <h1>Password Generator</h1>
+    <div class="password-generator">
+        <div class="wrapper">
+            <div class="input-box">
+                <input type="text" disabled placeholder="P4$5W0rD!">
+                <span class="fa fa-copy"></span>
+            </div>
+        </div>
+        <div class="pass-properties">
+            <div class="pass-length">
+                <div class="display-length">
+                    <label for="">Character Length</label>
+                    <span></span>
+                </div>
+                <input type="range" min="0" max="20" value="10" step="1">
+            </div>
+            <div class="pass-settings">
+                <ul class="options">
+                    <li class="option">
+                        <input type="checkbox" id="uppercase" checked>
+                        <label for="">Include Uppercase Letters</label>
+                    </li>
+                    <li class="option">
+                        <input type="checkbox" id="lowercase">
+                        <label for="">Include Lowercase Letters</label>
+                    </li>
+                    <li class="option">
+                        <input type="checkbox" id="numbers">
+                        <label for="">Include Numbers</label>
+                    </li>
+                    <li class="option">
+                        <input type="checkbox" id="symbols">
+                        <label for="">Include Symbols</label>
+                    </li>
+                </ul>
+            </div>
+            <div class="pass-strength">
+                <input type="text" placeholder="STRENGTH">
+                <span class="strength-size">MEDIUM</span>
+                <ul class="rectangles">
+                    <li class="rectangle"></li>
+                    <li class="rectangle"></li>
+                    <li class="rectangle"></li>
+                    <li class="rectangle"></li>
+                </ul>
+            </div>
+            <button class="generate-button">Generate</button>
+        </div>
+    </div>
+</body>
+<script src="/script.js"></script>
+
+</html>
