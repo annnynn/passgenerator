@@ -1,0 +1,186 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 100vh;
+    background: hsla(248, 15%, 11%, 1);
+    color: white;
+    font-family: 'Be Vietnam Pro', sans-serif;
+}
+
+h1 {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 32px;
+    color: #817D92;
+}
+
+.wrapper {
+    margin-top: 31px;
+}
+
+.wrapper .input-box {
+    position: relative;
+}
+
+.input-box input {
+    width: 100%;
+    height: 80px;
+    font-weight: 700;
+    font-size: 32px;
+    padding: 19px 28px 19px 32px;
+    border: 0;
+    color: hsla(252, 11%, 91%, 1);
+    background-color: hsla(247, 11%, 15%, 1);
+}
+
+.input-box span {
+    position: absolute;
+    right: 13px;
+    top: 30px;
+    cursor: pointer;
+}
+
+.pass-properties {
+    background-color: hsla(247, 11%, 15%, 1);
+    margin-top: 24px;
+    padding: 24px 24px 32px 32px;
+}
+
+.pass-properties label {
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 24px;
+    color: #E6E5EA;
+}
+
+.range {
+    width: 100%;
+    height: 8px;
+}
+
+.pass-settings {
+    margin-top: 23px;
+
+}
+
+.pass-settings .option {
+    display: flex;
+    align-items: center;
+    list-style-type: none;
+    flex-wrap: wrap;
+    margin-top: 19px;
+}
+
+.options .option input {
+    height: 20px;
+    width: 20px;
+    border-radius: 0px;
+}
+
+input[type="checkbox"] {
+    accent-color: #A4FFAF;
+}
+
+.options .option label {
+    cursor: pointer;
+    margin-left: 24px;
+}
+
+.display-length {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.pass-length {
+    display: flex;
+    flex-direction: column;
+    row-gap: 27px;
+}
+
+.pass-length span {
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 42px;
+    letter-spacing: 0px;
+    color: hsla(127, 100%, 82%, 1);
+}
+
+.pass-strength {
+    position: relative;
+    margin-top: 31px;
+}
+
+.pass-strength input {
+    width: 100%;
+    padding: 25px 21px 23px 32px;
+    background-color: hsla(247, 15%, 11%, 1);
+    border: 0;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 24px;
+    outline: none;
+}
+
+.pass-strength .strength-size {
+    position: absolute;
+    right: 100px;
+    top: 21px;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 32px;
+    text-align: right;
+}
+
+.pass-strength .rectangles {
+    position: absolute;
+    display: inline-flex;
+    gap: 8px;
+    top: 21px;
+    right: 21px;
+    border-radius: 0px;
+}
+
+.rectangle {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    height: 28px;
+    width: 10px;
+    background: hsla(252, 11%, 91%, 1);
+}
+
+.rectangle::before {
+    position: absolute;
+    content: "";
+    height: 100%;
+    width: 100%;
+    background: hsla(42, 91%, 69%, 1);
+}
+
+.rectangle #weak::before {
+    width: 20%;
+    background: hsla(252, 11%, 91%, 1);
+}
+
+.generate-button {
+    margin-top: 32px;
+    width: 100%;
+    padding: 21px 170px 20px 177px;
+    background-color: hsla(127, 100%, 82%, 1);
+    color: hsla(247, 11%, 15%, 1);
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 24px;
+    letter-spacing: 0px;
+    border: 0;
+}
