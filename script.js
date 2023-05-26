@@ -2,6 +2,7 @@ const lengthSlider = document.querySelector(".pass-length input");
 options = document.querySelectorAll(".option input");
 passwordInput = document.querySelector(".input-box input");
 copyIcon = document.querySelector(".input-box img");
+const copiedText = document.querySelector(".input-box span");
 const parent = document.querySelector(".scales");
 passIndicator = document.querySelector(".pass-strength span");
 
@@ -33,8 +34,10 @@ const copyPassword = async () => {
 	try {
 		await navigator.clipboard.writeText(passwordInput.value);
 		copyIcon.classList.add("green");
+        copiedText.innerText = "copied";
 		setTimeout(() => {
 			copyIcon.classList.remove("green");
+            copiedText.innerText = "";
 		}, "1000");
 	} catch (err) {
 		console.log("failed to copy: ", err);

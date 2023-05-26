@@ -5,10 +5,6 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="style.css">
     <title>Password Generator</title>
 </head>
@@ -20,6 +16,7 @@
             <div class="input-box">
                 <input type="text" disabled placeholder="P4$5W0rD!">
                 <img class="" src="/asset/Shape.svg" alt="">
+                <span class="copied"></span>
             </div>
         </div>
         <div class="pass-properties">
@@ -37,11 +34,11 @@
                         <label for="">Include Uppercase Letters</label>
                     </li>
                     <li class="option">
-                        <input type="checkbox" id="lowercase">
+                        <input type="checkbox" id="lowercase" checked>
                         <label for="">Include Lowercase Letters</label>
                     </li>
                     <li class="option">
-                        <input type="checkbox" id="numbers">
+                        <input type="checkbox" id="numbers" checked>
                         <label for="">Include Numbers</label>
                     </li>
                     <li class="option">

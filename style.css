@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@500;700;900&family=Be+Vietnam+Pro:wght@400;500;700;800&family=Big+Shoulders+Display:wght@900&family=Chivo&family=Hanken+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;700&family=JetBrains+Mono:wght@700&family=Josefin+Sans:wght@300;400;600&family=Kumbh+Sans:wght@400;700;800&family=Manrope:wght@800&family=Open+Sans&family=Outfit:wght@300&family=Plus+Jakarta+Sans:wght@700;800&family=Poppins:wght@200;300;400;600&family=Raleway:wght@400;700&family=Space+Mono:wght@700&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -12,7 +14,7 @@ body {
     min-height: 100vh;
     background: hsla(248, 15%, 11%, 1);
     color: white;
-    font-family: 'Be Vietnam Pro', sans-serif;
+    font-family: 'JetBrains Mono', monospace;
 }
 
 h1 {
@@ -54,6 +56,18 @@ h1 {
     height: 24;
 }
 
+.copied {
+    position: absolute;
+    right: 60px;
+    top: 30px;
+    color: #A4FFAF;
+    text-transform: uppercase;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 24px;
+}
+
+
 .pass-properties {
     background-color: hsla(247, 11%, 15%, 1);
     margin-top: 24px;
@@ -71,6 +85,31 @@ h1 {
     width: 100%;
     height: 8px;
 }
+
+input[type="range"] {
+    appearance: none;
+    background-color: #18171F;
+    accent-color: white;
+    cursor: pointer;
+    height: 8px;
+    width: 100%;
+}
+
+input[type="range"]::-webkit-slider-thumb{
+    height: 28px;
+    width: 28px;
+    background-color:white;
+    appearance: none;
+    border-radius: 14px;
+}
+
+input[type="range"]:hover::-webkit-slider-thumb{
+    background-color:  #18171F;
+    border: 2px solid #A4FFAF;
+    appearance: none;
+}
+
+
 
 .pass-settings {
     margin-top: 23px;
@@ -124,7 +163,6 @@ input[type="checkbox"] {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 25px 21px 23px 31px;
     margin-top: 31px;
 }
 
@@ -159,30 +197,31 @@ input[type="checkbox"] {
     background-color: transparent;
 }
 
-.tooWeak{
+.tooWeak {
     border: 2px solid #F64A4A;
-     background-color: #F64A4A;
+    background-color: #F64A4A;
 }
 
-.weak{
-    border: 2px solid  #FB7C58;
+.weak {
+    border: 2px solid #FB7C58;
     background-color: #FB7C58;
 }
 
-.medium{
+.medium {
     border: 2px solid #F8CD65;
-    background-color:#F8CD65;
+    background-color: #F8CD65;
 }
 
-.strong{
+.strong {
     border: 2px solid #A4FFAF;
     background-color: #A4FFAF;
 }
 
 .generate-button {
+    font-family: 'JetBrains Mono', monospace;
     margin-top: 32px;
     width: 100%;
-    padding: 21px 170px 20px 177px;
+    border: 1px solid hsla(127, 100%, 82%, 1);
     background-color: hsla(127, 100%, 82%, 1);
     color: hsla(247, 11%, 15%, 1);
     font-size: 18px;
@@ -191,4 +230,91 @@ input[type="checkbox"] {
     letter-spacing: 0px;
     border: 0;
     cursor: pointer;
+    text-transform: uppercase;
+    background-image: url(/asset/arrow.svg);
+    background-repeat: no-repeat;
+    background-position: 70%;
+    width: 100%;
+    height: 65px;
+}
+
+.generate-button:hover {
+    background-color: transparent;
+    border: 1px solid hsla(127, 100%, 82%, 1);
+    color: hsla(127, 100%, 82%, 1);
+    background-image: url(/asset/arrow-green.svg);
+}
+
+@media only screen and (max-width:400px) {
+
+    body {
+        padding: 64px 16px 64px 16px;
+    }
+
+    h1 {
+        font-size: 16px;
+    }
+
+    .wrapper {
+        margin-top: 0px;
+    }
+
+    .input-box input {
+        font-size: 24px;
+        margin-top: 16px;
+    }
+
+    .input-box img {
+        width: 17.5px;
+        height: 20px;
+        top: 45px;
+        right: 22px;
+    }
+
+    .copied {
+        display: none;
+    }
+
+    .pass-properties {
+        border-radius: 0px;
+        margin-top: 16px;
+    }
+
+    .pass-properties label {
+        font-size: 16px;
+    }
+
+    .pass-length span {
+        font-size: 24px;
+    }
+
+    .pass-settings {
+        margin-top: 32px;
+    }
+
+    .pass-settings .option {
+        display: flex;
+        margin-top: 16px;
+        column-gap: 20px;
+    }
+
+    .options .option label {
+        margin-left: 0px;
+        font-size: 16px;
+    }
+
+    .pass-strength {
+        margin-top: 32px;
+    }
+
+    .generate-button {
+        margin-top: 16px;
+        height: 56px;
+        width: 311px;
+        font-size: 16px;
+    }
+
+    .pass-strength span{
+        font-size: 18px;
+    }
 }
