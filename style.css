@@ -1,4 +1,3 @@
-
 * {
     margin: 0;
     padding: 0;
@@ -31,6 +30,10 @@ h1 {
     position: relative;
 }
 
+.green {
+    filter: grayscale(90%) brightness(90%) sepia(50%) hue-rotate(50deg) saturate(400%);
+}
+
 .input-box input {
     width: 100%;
     height: 80px;
@@ -42,11 +45,13 @@ h1 {
     background-color: hsla(247, 11%, 15%, 1);
 }
 
-.input-box span {
+.input-box img {
     position: absolute;
     right: 13px;
     top: 30px;
     cursor: pointer;
+    width: 21px;
+    height: 24;
 }
 
 .pass-properties {
@@ -116,60 +121,62 @@ input[type="checkbox"] {
 }
 
 .pass-strength {
-    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 25px 21px 23px 31px;
     margin-top: 31px;
 }
 
-.pass-strength input {
-    width: 100%;
-    padding: 25px 21px 23px 32px;
-    background-color: hsla(247, 15%, 11%, 1);
-    border: 0;
+.pass-strength p {
     font-weight: 700;
     font-size: 18px;
     line-height: 24px;
-    outline: none;
+    color: #817D92;
+    text-transform: uppercase;
 }
 
-.pass-strength .strength-size {
-    position: absolute;
-    right: 100px;
-    top: 21px;
+.pass-strength span {
     font-weight: 700;
     font-size: 24px;
     line-height: 32px;
-    text-align: right;
+    color: #E6E5EA;
 }
 
-.pass-strength .rectangles {
-    position: absolute;
-    display: inline-flex;
-    gap: 8px;
-    top: 21px;
-    right: 21px;
-    border-radius: 0px;
-}
-
-.rectangle {
-    position: relative;
+.scales {
     display: flex;
-    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    column-gap: 8px;
+    width: 100%;
+    height: 100%;
+}
+
+.scale_bar {
     height: 28px;
     width: 10px;
-    background: hsla(252, 11%, 91%, 1);
+    border: 2px solid #E6E5EA;
+    background-color: transparent;
 }
 
-.rectangle::before {
-    position: absolute;
-    content: "";
-    height: 100%;
-    width: 100%;
-    background: hsla(42, 91%, 69%, 1);
+.tooWeak{
+    border: 2px solid #F64A4A;
+     background-color: #F64A4A;
 }
 
-.rectangle #weak::before {
-    width: 20%;
-    background: hsla(252, 11%, 91%, 1);
+.weak{
+    border: 2px solid  #FB7C58;
+    background-color: #FB7C58;
+}
+
+.medium{
+    border: 2px solid #F8CD65;
+    background-color:#F8CD65;
+}
+
+.strong{
+    border: 2px solid #A4FFAF;
+    background-color: #A4FFAF;
 }
 
 .generate-button {
@@ -183,4 +190,5 @@ input[type="checkbox"] {
     line-height: 24px;
     letter-spacing: 0px;
     border: 0;
+    cursor: pointer;
 }
