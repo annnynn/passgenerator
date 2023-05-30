@@ -81,39 +81,49 @@ h1 {
     color: #E6E5EA;
 }
 
-.range {
+.slider-container {
+    position: relative;
     width: 100%;
-    height: 8px;
 }
 
-input[type="range"] {
+.slider-track {
+    width: 50%;
+    height: 8px;
+    background: #A4FFAF;
+    outline: none;
+    position: absolute;
+    margin-top: 7px;
+    z-index: 1;
+}
+
+.slider {
     appearance: none;
-    background-color: #18171F;
-    accent-color: white;
-    cursor: pointer;
-    height: 8px;
     width: 100%;
+    height: 8px;
+    outline: none;
+    background-color: #18171F;
+    cursor: pointer;
 }
 
-input[type="range"]::-webkit-slider-thumb{
+input[type="range"]::-webkit-slider-thumb {
     height: 28px;
     width: 28px;
-    background-color:white;
+    background-color: white;
     appearance: none;
     border-radius: 14px;
+    z-index: 2;
+    position: relative;
 }
 
-input[type="range"]:hover::-webkit-slider-thumb{
-    background-color:  #18171F;
+input[type="range"]:hover::-webkit-slider-thumb {
+    background-color: #18171F;
     border: 2px solid #A4FFAF;
     appearance: none;
 }
 
 
-
 .pass-settings {
     margin-top: 23px;
-
 }
 
 .pass-settings .option {
@@ -177,7 +187,6 @@ input[type="checkbox"] {
 .pass-strength span {
     font-weight: 700;
     font-size: 24px;
-    line-height: 32px;
     color: #E6E5EA;
 }
 
@@ -197,6 +206,7 @@ input[type="checkbox"] {
     background-color: transparent;
 }
 
+
 .tooWeak {
     border: 2px solid #F64A4A;
     background-color: #F64A4A;
@@ -215,6 +225,45 @@ input[type="checkbox"] {
 .strong {
     border: 2px solid #A4FFAF;
     background-color: #A4FFAF;
+}
+
+.empty {
+    border: 2px solid #E6E5EA;
+    background-color: transparent;
+}
+
+
+input[type="checkbox"] {
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: transparent;
+    border: 2px solid #E6E5EA;
+
+}
+
+input[type="checkbox"]:checked {
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: #A4FFAF;
+    display: grid;
+    place-content: center;
+    border: 0;
+}
+
+input[type="checkbox"]::before {
+    content: "";
+    width: 11.39px;
+    height: 8px;
+    transform: scale(0);
+    transition: 120ms transform ease-in-out;
+    box-shadow: inset 1em 1em solid #18171F;
+    clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+    background-color: CanvasText;
+
+}
+
+input[type="checkbox"]:checked::before {
+    transform: scale(1);
 }
 
 .generate-button {
@@ -314,7 +363,7 @@ input[type="checkbox"] {
         font-size: 16px;
     }
 
-    .pass-strength span{
+    .pass-strength span {
         font-size: 18px;
     }
 }

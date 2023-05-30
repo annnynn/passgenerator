@@ -1,10 +1,13 @@
-const lengthSlider = document.querySelector(".pass-length input");
-options = document.querySelectorAll(".option input");
-passwordInput = document.querySelector(".input-box input");
+const lengthSlider = document.querySelector(".pass-length input"); // input range value
+const spanNumber = document.querySelector(".pass-length span");
+options = document.querySelectorAll(".options input"); // checkbox inputs
+passwordInput = document.querySelector(".input-box input"); // password input
 copyIcon = document.querySelector(".input-box img");
 const copiedText = document.querySelector(".input-box span");
+const sliderTrack = document.querySelector(".slider-track");
 const parent = document.querySelector(".scales");
 passIndicator = document.querySelector(".pass-strength span");
+let checkBoxes = document.querySelectorAll(".checkbox");
 
 generateBtn = document.querySelector(".generate-button");
 const characters = {
@@ -34,10 +37,10 @@ const copyPassword = async () => {
 	try {
 		await navigator.clipboard.writeText(passwordInput.value);
 		copyIcon.classList.add("green");
-        copiedText.innerText = "copied";
+		copiedText.innerText = "copied";
 		setTimeout(() => {
 			copyIcon.classList.remove("green");
-            copiedText.innerText = "";
+			copiedText.innerText = "";
 		}, "1000");
 	} catch (err) {
 		console.log("failed to copy: ", err);
@@ -49,6 +52,23 @@ const removeStyles = () => {
 		child.classList.remove("tooWeak", "weak", "medium", "strong");
 	})
 }
+
+const calculatePerc = () => {
+	let maxValue = 15;
+	let currentValue = lengthSlider.value;
+	sliderTrack.value = (currentValue / maxValue) * 100 + "%";
+	sliderTrack.style.width = sliderTrack.value;
+
+	if (currentValue == 0) {
+		parent.children[1].classList.add("empty");
+		passwordInput.value = "";
+	} else {
+		passIndicator.style = "display:block";
+		parent.children[1].classList.add("tooWeak");
+		parent.children[1].classList.remove("empty");
+	}
+}
+
 
 const updatePassIndicator = () => {
 	removeStyles();
@@ -83,11 +103,21 @@ const scalesColor = () => {
 
 function updateSlider() {
 	document.querySelector(".pass-length span").innerText = lengthSlider.value;
+	lengthSlider.innerHTML = lengthSlider.value;
 	updatePassIndicator();
+	calculatePerc();
 }
 
+const checkBox = () => {
+	
+}
+
+
 updateSlider();
+checkBox();
+
 
 copyIcon.addEventListener("click", copyPassword);
 lengthSlider.addEventListener("input", updateSlider);
 generateBtn.addEventListener("click", generatePassword);
+
