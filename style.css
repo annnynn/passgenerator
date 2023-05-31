@@ -312,12 +312,22 @@ input[type="checkbox"]:checked::before {
     .input-box input {
         font-size: 24px;
         margin-top: 16px;
+        width: 343px;
+        height: 64px
+    }
+
+    input[type="text"] {
+        font-size: 24px;
+    }
+
+    .pass-length {
+        row-gap: 13px;
     }
 
     .input-box img {
         width: 17.5px;
         height: 20px;
-        top: 45px;
+        top: 35px;
         right: 22px;
     }
 
@@ -328,6 +338,8 @@ input[type="checkbox"]:checked::before {
     .pass-properties {
         border-radius: 0px;
         margin-top: 16px;
+        width: 343px;
+        height: 423px;
     }
 
     .pass-properties label {
@@ -360,7 +372,7 @@ input[type="checkbox"]:checked::before {
     .generate-button {
         margin-top: 16px;
         height: 56px;
-        width: 311px;
+        width: 100%;
         font-size: 16px;
     }
 
