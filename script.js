@@ -7,7 +7,7 @@ const copiedText = document.querySelector(".input-box span");
 const sliderTrack = document.querySelector(".slider-track");
 const parent = document.querySelector(".scales");
 passIndicator = document.querySelector(".pass-strength span");
-let checkBoxes = document.querySelectorAll(".checkbox");
+
 
 generateBtn = document.querySelector(".generate-button");
 const characters = {
@@ -31,6 +31,43 @@ const generatePassword = () => {
 		randomPassword = randomPassword + staticPassword[Math.floor(Math.random() * staticPassword.length)];
 	}
 	passwordInput.value = randomPassword;
+
+	checkBoxesFun();
+}
+
+
+const EmptyCheckBoxes = () => {
+	options.forEach(item => {
+		if (lengthSlider.value == 0) {
+			item.checked = false;
+		}
+	})
+};
+
+const defaultCheckBoxes = () => {
+	options.forEach(item => {
+		if (lengthSlider.value > 1) {
+			document.getElementById("uppercase").checked = true;
+			document.getElementById("lowercase").checked = true;
+			document.getElementById("numbers").checked = true;
+		}
+	})
+}
+
+
+const checkBoxesFun = () => {
+	let checks = [];
+	options.forEach(item => {
+		if (item.checked === true) {
+			checks.push(item.value);
+		} else if (spanNumber === 0 && checks.length === 0) {
+			document.querySelector(".options input").checked = false;
+			console.log("array is empty");
+			passwordInput.value = "";
+		}
+	})
+
+	console.log(checks);
 }
 
 const copyPassword = async () => {
@@ -106,15 +143,12 @@ function updateSlider() {
 	lengthSlider.innerHTML = lengthSlider.value;
 	updatePassIndicator();
 	calculatePerc();
-}
-
-const checkBox = () => {
-	
+	defaultCheckBoxes();
+	EmptyCheckBoxes();
 }
 
 
 updateSlider();
-checkBox();
 
 
 copyIcon.addEventListener("click", copyPassword);
