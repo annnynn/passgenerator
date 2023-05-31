@@ -43,9 +43,13 @@ h1 {
     font-size: 32px;
     padding: 19px 28px 19px 32px;
     border: 0;
-    color: hsla(252, 11%, 91%, 1);
     background-color: hsla(247, 11%, 15%, 1);
 }
+
+input[type="text"] {
+    color: #E6E5EA;
+}
+
 
 .input-box img {
     position: absolute;
@@ -318,6 +322,7 @@ input[type="checkbox"]:checked::before {
 
     input[type="text"] {
         font-size: 24px;
+        color: #E6E5EA;
     }
 
     .pass-length {
